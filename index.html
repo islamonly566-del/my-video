@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>میری ویڈیو ویب سائٹ</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #101010;
+      color: white;
+      font-family: sans-serif;
+    }
+
+    header {
+      background: #202020;
+      padding: 18px;
+      text-align: center;
+      border-bottom: 2px solid #ff3030;
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      color: #ff4545;
+    }
+
+    input {
+      width: 100%;
+      max-width: 500px;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+
+    main {
+      padding: 18px;
+    }
+
+    .videos {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .video {
+      background: #222;
+      border-radius: 12px;
+      overflow: hidden;
+      padding-bottom: 12px;
+    }
+
+    .video video {
+      display: block;
+      width: 100%;
+      background: black;
+    }
+
+    .video h3,
+    .video p {
+      margin: 10px 12px;
+    }
+
+    .video p {
+      color: #bbb;
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 22px;
+      text-align: center;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>▶ میری ویڈیو</h1>
+    <input
+      id="search"
+      type="search"
+      placeholder="ویڈیو تلاش کریں..."
+      aria-label="ویڈیو تلاش کریں"
+    >
+  </header>
+
+  <main>
+    <h2>تازہ ویڈیوز</h2>
+
+    <div class="videos" id="videos">
+
+      <article class="video">
+        <video controls
+               preload="metadata"
+               playsinline
+               poster="">
+          <source
+            src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+            type="video/mp4">
+          تمہارا براؤزر ویڈیو نہیں چلا سکتا۔
+        </video>
+        <h3>پھولوں کی ویڈیو</h3>
+        <p>نمونہ ویڈیو نمبر 1</p>
+      </article>
+
+      <article class="video">
+        <video controls
+               preload="metadata"
+               playsinline>
+          <source
+            src="https://www.w3schools.com/html/mov_bbb.mp4"
+            type="video/mp4">
+          تمہارا براؤزر ویڈیو نہیں چلا سکتا۔
+        </video>
+        <h3>قدرتی مناظر</h3>
+        <p>نمونہ ویڈیو نمبر 2</p>
+      </article>
+
+    </div>
+  </main>
+
+  <footer>
+    میری ویڈیو ویب سائٹ © 2026
+  </footer>
+
+  <script>
+    const search = document.getElementById("search");
+    const videos = document.querySelectorAll(".video");
+
+    search.addEventListener("input", function () {
+      const query = search.value.toLowerCase().trim();
+
+      videos.forEach(function (video) {
+        const title = video.innerText.toLowerCase();
+        video.style.display =
+          title.includes(query) ? "" : "none";
+      });
+    });
+  </script>
+</body>
+</html>
+
+<article class="video">
+  <video controls playsinline preload="metadata">
+    <source src="videos/myvideo.mp4" type="video/mp4">
+  </video>
+  <h3>میری اپنی ویڈیو</h3>
+  <p>میری اپ لوڈ کی ہوئی ویڈیو</p>
+</article>
+
