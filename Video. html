@@ -1,12 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Video Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Video Website</title>
+<style>
+body{background:#111;color:white;font-family:Arial;margin:0;padding:20px}
+h1{color:#ff3333}
+.video{background:#222;padding:12px;border-radius:10px;margin-top:20px}
+video{width:100%;border-radius:8px}
+</style>
 </head>
 <body>
-  <h1>My Video Website</h1>
-  <p>Welcome to my video website!</p>
+<h1>My Video Website</h1>
+<p>خوش آمدید!</p>
+
+<div class="video">
+<h3>میری پہلی ویڈیو</h3>
+<video controls>
+<source src="video.mp4" type="video/mp4">
+</video>
+</div>
+
 </body>
 </html>
